@@ -10,7 +10,7 @@
 
   <body>
     <header>
-      <img class="logo" id="playSound" src="./images/capoo_icon.png" />
+      <img class="logo" src="./images/capoo_icon.png" />
       <a href="./home.html" class="title">Capoo's fans club</a>
       <nav>
         <ul class="nav_links">
@@ -19,10 +19,53 @@
           <li><a href="#">Forum</a></li>
         </ul>
       </nav>
-      <a class="button" href="./signup.html"><button>Sign Up</button></a>
+      <a class="button" href="./signup.html"><button>Register</button></a>
     </header>
     <div class="backGround">
-      <div class="body"></div>
+      <div class="body">
+        <button onclick="showcapoo()">asd</button>
+        <a class="body_title">Whack-a-capoo!</a>
+        <img class="body_image" src="./images/capoo_dance.gif" />
+        <span class="score">0</span>
+        <button class="startgamebtn" onClick="startGame()">Start</button>
+        <div class="game">
+          <div class="hole hole1">
+            <div class="capoo"></div>
+          </div>
+          <div class="hole hole2">
+            <div class="capoo"></div>
+          </div>
+
+          <div class="hole hole3">
+            <div class="capoo"></div>
+          </div>
+
+          <div class="hole hole4">
+            <div class="capoo"></div>
+          </div>
+
+          <div class="hole hole5">
+            <div class="capoo"></div>
+          </div>
+
+          <div class="hole hole6">
+            <div class="capoo"></div>
+          </div>
+        </div>
+      </div>
+      <div class="background_capoos">
+        <img src="./images/capoo_reject.gif" />
+        <img src="./images/capoo_headshaking.gif" />
+        <img src="./images/capoo_king.gif" />
+        <img src="./images/capoo_shit.gif" />
+        <img src="./images/capoo_looking_forward.gif" />
+        <img src="./images/capoo_computer.gif" />
+        <img src="./images/capoo_food.gif" />
+        <img src="./images/capoo_giphy.gif" />
+        <img src="./images/capoo_wave.gif" />
+        <img src="./images/capoo_lick.gif" />
+      </div>
     </div>
+    <script src="./logics.js"></script>
   </body>
 </html>
