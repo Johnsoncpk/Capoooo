@@ -2,6 +2,20 @@
   margin: 0;
   padding: 0;
   font-family: Fantasy;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.cursor{
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  background-color: rgb(15, 151, 117);
+  z-index: 1;
+  animation: flash 0.5s none infinite alternate;
 }
 h1 {
   font-family: Fantasy;
@@ -9,28 +23,34 @@ h1 {
   color: #145c5c;
 }
 label {
+  display: flex;
   font-family: Fantasy;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 30px;
   color: #145c5c;
   text-decoration: none;
-  margin-top: 30px;
+  margin-top: 4%;
+}
+.div{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 p,
 li,
 a {
   font-family: Fantasy;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 30px;
   color: #145c5c;
   text-decoration: none;
 }
 
 .title {
+  display: flex;
   font-family: Fantasy;
   text-align: center;
-  font-size: 60px;
+  font-size: 200%;
   color: #0f4e58;
   margin-right: auto;
 }
@@ -40,7 +60,7 @@ a {
 
 header {
   z-index: 1;
-  height: auto;
+  height: 10%;
   width: 100%;
   background-image: linear-gradient(to top left, #81a190, #a2c0a0);
   display: flex;
@@ -51,6 +71,7 @@ header {
 }
 
 .logo {
+  display: flex;
   padding-left: 8px;
   cursor: pointer;
   width: 80px;
@@ -66,11 +87,13 @@ header {
 }
 
 .nav_links li {
+  display: flex;
   display: inline-block;
   padding: 0px 20px;
 }
 
 .nav_links li a {
+  display: flex;
   font-size: 30px;
   transition: all 0.3s ease 0s;
 }
@@ -80,6 +103,7 @@ header {
 }
 
 header button {
+  display: flex;
   color: rgb(83, 168, 140);
   margin-left: 15px;
   margin-right: 15px;
@@ -97,6 +121,8 @@ header button:hover {
 }
 
 .backGround {
+  flex-flow: column wrap;
+  display: flex;
   position: absolute;
   z-index: -1;
   background-image: linear-gradient(to top left, #81a190, #a2c0a0, #dbe8d9);
@@ -109,16 +135,19 @@ header button:hover {
 }
 
 .body {
+  flex-flow: column wrap;
+  flex-wrap: wrap;
   padding: 20px;
   z-index: 0;
-  top: 100px;
+  top: 8%;
   position: relative;
   border-style: groove;
   border-width: 20px;
   border-radius: 25px;
   border-color: #81a190;
   background-image: linear-gradient(to top right, #bed6bc, #dbe8d9);
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   height: 75%;
   width: 65%;
   background-attachment: scroll;
@@ -127,11 +156,19 @@ header button:hover {
   background-size: cover;
 }
 .body_image {
-  margin-bottom: 40px;
+  cursor: pointer;
+  margin-bottom: 2%;
   position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  transition: transform 15s;
+  z-index: 2;
+  width: 25%;
+  height: 27%;
+}
+.body_image:hover {
+  transform: scale(3);
 }
 
 .body_title {
@@ -146,6 +183,9 @@ header button:hover {
   text-decoration: underline;
 }
 .body_paragraph {
+  
+  flex-wrap: wrap;
+  z-index: 1;
   position: relative;
   text-align: center;
   display: block;
@@ -154,16 +194,8 @@ header button:hover {
   width: 75%;
 }
 
-.body_button {
-  font-family: Fantasy;
-  font-weight: 500;
-  font-size: 30px;
-  color: #145c5c;
-  text-decoration: none;
-  position: relative;
-  margin-top: 100%;
-}
 #body_botleft_btn {
+  flex-wrap: wrap;
   position: absolute;
   top: 88%;
   left: 4%;
@@ -171,20 +203,21 @@ header button:hover {
   transform: translateY(-50%);
   background: url(/images/capoo_cry_weired2.jpg) no-repeat;
   background-size: 100% 100%;
-  width: 240px;
-  height: 220px;
+  width: 15%;
+  height: 15%;
   border: none;
 }
 #body_botright_btn {
+  flex-wrap: wrap;
   position: absolute;
   top: 88%;
-  left: 76%;
+  left: 96%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   background: url(/images/capoo_reject_weired.jpg) no-repeat;
   background-size: 100% 100%;
-  width: 240px;
-  height: 220px;
+  width: 15%;
+  height: 15%;
   border: none;
 }
 
@@ -200,19 +233,12 @@ button:focus {
   outline: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-
 input[type="text"],
 input[type="password"] {
   font-family: Fantasy;
   font-size: 20px;
   width: 100%;
   padding: 20px;
-  margin-top: 15px;
-  margin-bottom: 15px;
   display: inline-block;
   border: none;
   background: #f1f1f1;
@@ -226,16 +252,16 @@ input[type="password"]:focus {
 
 hr {
   border: 2px solid #1e7562;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .cancelbtn {
   color: rgb(98, 197, 164);
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 30px;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  font-size: 150%;
   padding: 9px 20px;
   background-color: #043a50;
   border: dark;
@@ -243,12 +269,13 @@ hr {
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
+
 .signupbtn {
   color: rgb(98, 197, 164);
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 30px;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  font-size: 150%;
   padding: 9px 20px;
   background-color: #043a50;
   border: dark;
@@ -264,34 +291,27 @@ hr {
   height: 15%;
 }
 
-.container {
-  padding: 20px;
-}
-
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.background_capoos{
-  visibility: hidden;
-}
 .background_capoos img {
-  visibility: hidden;
+  visibility: visible;
   display: block;
   position: absolute;
   bottom: 3%;
-  height: 230px;
-  width: 230px;
+  height: 10%;
+  width: 10%;
 }
 
 .background_capoos img:nth-of-type(1) {
-  left: 5%;
+  left: 2%;
 }
 
 .background_capoos img:nth-of-type(2) {
-  left: 30%;
+  left: 28%;
 }
 
 .background_capoos img:nth-of-type(3) {
@@ -299,7 +319,7 @@ hr {
 }
 
 .background_capoos img:nth-of-type(4) {
-  right: 5%;
+  right: 2%;
 }
 
 .background_capoos img:nth-of-type(5) {
@@ -313,12 +333,12 @@ hr {
 }
 
 .background_capoos img:nth-of-type(7) {
-  top: 55%;
+  top: 60%;
   left: 2%;
 }
 
 .background_capoos img:nth-of-type(8) {
-  top: 55%;
+  top: 60%;
   right: 2%;
 }
 
@@ -411,15 +431,13 @@ hr {
   }
 
   .score {
-    width: 35px;
-    font-size: 15px;
-    height: 40px;
+    background: rgb(28, 80, 114);
+    padding: 0 12px;
+    line-height: 1;
+    border-radius: 16px;
     color: #fff;
-    background-color: blue;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-    padding: 5px;
+    font-size: 40px;
+    margin-left: 20px;
   }
 
   .hole:after {

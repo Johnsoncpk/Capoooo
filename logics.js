@@ -2,13 +2,12 @@ var i = 0;
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const capoos = document.querySelectorAll('.capoo');
-/*document.querySelectorAll('background_capoos').style.visibility = 'visible';*/
-const background_capoos = document.getElementsByClassName('.background_capoos');
 const body_paragraph = document.getElementById("body_paragraph");
 let lastHole;
 let timeUp = false;
 let score = 0;
 let gameStarted = false;
+
 function typeWriter() {
     var txt = 'Wellcom to our website! \nWe are two students from Hong Koong, and like \'Capoo\' very much! About Capoo, Capoo is a cartoon charator by Aila from Taiwan, Capoo is a boy and looks like a cat but also has six feet and Capoo loves meat so much. If you like \'Capoo\' too, welcome to sign up and join our community by clicking the sign up button on top!';
     var speed = 50;
@@ -34,9 +33,7 @@ function randomHole(holes) {
     lastHole = hole;
     return hole;
 }
-function showcapoo() {
-    background_capoos.style.visibility = "visible";
-}
+
 function peep() {
     const time = randomTime(700, 1200); 
     const hole = randomHole(holes); 
