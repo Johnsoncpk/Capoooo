@@ -165,7 +165,7 @@ header button:hover {
   transition: transform 15s;
   z-index: 2;
   width: 25%;
-  height: 27%;
+  height: 25%;
 }
 .body_image:hover {
   transform: scale(3);
@@ -183,7 +183,6 @@ header button:hover {
   text-decoration: underline;
 }
 .body_paragraph {
-  
   flex-wrap: wrap;
   z-index: 1;
   position: relative;
@@ -203,10 +202,11 @@ header button:hover {
   transform: translateY(-50%);
   background: url(/images/capoo_cry_weired2.jpg) no-repeat;
   background-size: 100% 100%;
-  width: 15%;
-  height: 15%;
+  width: 150px;
+  height: 150px;
   border: none;
 }
+
 #body_botright_btn {
   flex-wrap: wrap;
   position: absolute;
@@ -216,8 +216,8 @@ header button:hover {
   transform: translateY(-50%);
   background: url(/images/capoo_reject_weired.jpg) no-repeat;
   background-size: 100% 100%;
-  width: 15%;
-  height: 15%;
+  width: 150px;
+  height: 150px;
   border: none;
 }
 
@@ -252,43 +252,29 @@ input[type="password"]:focus {
 
 hr {
   border: 2px solid #1e7562;
-  margin-top: 1%;
-  margin-bottom: 1%;
-}
-
-.cancelbtn {
-  color: rgb(98, 197, 164);
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-right: 1%;
-  font-size: 150%;
-  padding: 9px 20px;
-  background-color: #043a50;
-  border: dark;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.signupbtn {
-  color: rgb(98, 197, 164);
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-right: 1%;
-  font-size: 150%;
-  padding: 9px 20px;
-  background-color: #043a50;
-  border: dark;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .cancelbtn,
 .signupbtn {
   float: left;
-  width: 30%;
+  width: 40%;
   height: 15%;
+  color: rgb(98, 197, 164);
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  font-size: 150%;
+  padding: 9px 20px;
+  background-color: #06506d;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.cancelbtn:hover,
+.signupbtn:hover{
+  background-color: #032d3d;
 }
 
 .clearfix::after {
@@ -298,7 +284,6 @@ hr {
 }
 
 .background_capoos img {
-  visibility: visible;
   display: block;
   position: absolute;
   bottom: 3%;
@@ -402,71 +387,6 @@ hr {
   top: 0;
 }
 
-@media (min-width: 667px) and (max-width: 1024px) {
-  h1 {
-    display: none;
-  }
-  .score {
-    background: rgb(28, 80, 114);
-    padding: 0 12px;
-    line-height: 1;
-    border-radius: 16px;
-    color: #fff;
-    font-size: 40px;
-    margin-left: 20px;
-  }
-
-  .hole.up .capoo {
-    top: 20px;
-  }
-}
-
-@media (max-width: 667px) {
-  .game {
-    width: 667px;
-    height: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-
-  .score {
-    background: rgb(28, 80, 114);
-    padding: 0 12px;
-    line-height: 1;
-    border-radius: 16px;
-    color: #fff;
-    font-size: 40px;
-    margin-left: 20px;
-  }
-
-  .hole:after {
-    display: block;
-    background: url(./images/dirt.png) bottom center no-repeat;
-    background-size: contain;
-    content: "";
-    max-width: 70%;
-    height: 60px;
-    position: absolute;
-    z-index: 2;
-    bottom: -30px;
-  }
-
-  .capoo {
-    background: url("./images/capoo_looking_forward.jpg") bottom center
-      no-repeat;
-    background-size: 60%;
-    position: absolute;
-    top: 100%;
-    max-width: 70%;
-    height: 70%;
-    transition: all 0.4s;
-  }
-
-  .hole.up .capoo {
-    top: 50px;
-  }
-}
 
 .startgamebtn {
   color: rgb(83, 168, 140);
@@ -478,5 +398,34 @@ hr {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
 }
+.startgamebtn:hover{
+  background-color: #0c394b;
+}
+
+@media (max-width: 1550px){
+  .body_title{
+    font-size: 55px;
+  }
+  .game {
+    width: 750px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .startgamebtn {
+    font-size: 30px;
+  }
+  .score{
+    font-size: 30px;
+    padding: 10px 90px;
+  }
+  .body_paragraph
+  {
+    font-size: 40px;
+  }
+}
+
+
+
