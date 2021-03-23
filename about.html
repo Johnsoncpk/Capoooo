@@ -7,23 +7,37 @@
     <link rel="icon" href="./images/capoo_love.jpg" />
     <title>About Us</title>
   </head>
+  <audio id="myAudio">
+    <source src="./audio/capoo_soundtrack.mp3" type="audio/mpeg"  >
+  </audio>
   <body onload="typeWriter()">
-    <header>
-      <img class="logo" src="./images/capoo_icon.png" alt="logo" />
-      <a href="./home.html" class="title">Capoo's fans club</a>
-      <nav>
-        <ul class="nav_links">
-          <li><a href="./home.html">Home</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="#">Forum</a></li>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="./home.html" id="navbar__logo"><img src="./images/capoo_icon.png" height="70" width="70">Capoo's Fans Club</img></a>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span> <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="./home.html" class="navbar__links" id="home-page">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="./about.html" class="navbar__links" id="about-page">About</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__links" id="forum-page">Forum</a>
+          </li>
+          <li class="navbar__btn">
+            <a href="./signup.html" class="active">Register</a>
+          </li>
         </ul>
-      </nav>
-      <a class="button" href="./signup.html"><button>Register</button></a>
-    </header>
+      </div>
+    </nav>
     <div class="backGround">
       <div class="body">
         <a class="body_title">About us</a>
-        <img class="body_image" src="./images/capoo_meditating.gif" loop="infinite"/>
+        <img class="body_image" src="./images/capoo_meditating.gif" loop="infinite" onclick="playAudio()"/>
         <p id="body_paragraph" class="body_paragraph">
           <h1></h1>
         </p>

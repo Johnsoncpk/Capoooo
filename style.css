@@ -6,17 +6,189 @@
   scroll-behavior: smooth;
 }
 
-.cursor{
-  display: block;
-  position: absolute;
-  height: 100%;
+.navbar {
+  background-image: linear-gradient(to top left, #81a190, #a2c0a0);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: sticky;
   top: 0;
-  right: -5px;
-  width: 2px;
-  background-color: rgb(15, 151, 117);
-  z-index: 1;
-  animation: flash 0.5s none infinite alternate;
+  z-index: 999;
 }
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar__logo {
+  background-color: #0f4e58;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+#navbar__logo:hover {transform: scale(1.2);}
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar__item {
+  height: 80px;
+}
+
+.navbar__links {
+  color: #145c5c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  text-decoration: none;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar__links:hover {
+  color: #0d3d3d;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0;
+  }
+
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+
+  .navbar__menu.active {
+    background:  #a2c0a0;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
+  }
+
+  #navbar__logo {
+    padding-left: 25px;
+  }
+
+  .navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #0f4e58;
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar__links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .navbar__btn {
+    padding-bottom: 2rem;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  .navbar__toggle .bar {
+    display: block;
+    cursor: pointer;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
 h1 {
   font-family: Fantasy;
   font-size: 60px;
@@ -31,11 +203,10 @@ label {
   text-decoration: none;
   margin-top: 4%;
 }
-.div{
+.div {
   display: flex;
   flex-wrap: wrap;
 }
-
 p,
 li,
 a {
@@ -50,74 +221,13 @@ a {
   display: flex;
   font-family: Fantasy;
   text-align: center;
-  font-size: 200%;
+  font-size: 45px;
   color: #0f4e58;
   margin-right: auto;
 }
+
 .title:hover {
   color: #0b3e46;
-}
-
-header {
-  z-index: 1;
-  height: 10%;
-  width: 100%;
-  background-image: linear-gradient(to top left, #81a190, #a2c0a0);
-  display: flex;
-  font-size: 1.8rem;
-  justify-content: flex-end;
-  align-items: center;
-  position: fixed;
-}
-
-.logo {
-  display: flex;
-  padding-left: 8px;
-  cursor: pointer;
-  width: 80px;
-  height: 80px;
-  transition: transform 0.2s;
-}
-.logo:hover {
-  transform: scale(1.2);
-}
-
-.nav_links {
-  list-style: none;
-}
-
-.nav_links li {
-  display: flex;
-  display: inline-block;
-  padding: 0px 20px;
-}
-
-.nav_links li a {
-  display: flex;
-  font-size: 30px;
-  transition: all 0.3s ease 0s;
-}
-
-.nav_links li a:hover {
-  color: #0f4747;
-}
-
-header button {
-  display: flex;
-  color: rgb(83, 168, 140);
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 30px;
-  padding: 9px 20px;
-  background-color: #043a50;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-header button:hover {
-  background-color: #033042;
 }
 
 .backGround {
@@ -139,7 +249,7 @@ header button:hover {
   flex-wrap: wrap;
   padding: 20px;
   z-index: 0;
-  top: 8%;
+  top: 3%;
   position: relative;
   border-style: groove;
   border-width: 20px;
@@ -167,6 +277,7 @@ header button:hover {
   width: 25%;
   height: 25%;
 }
+
 .body_image:hover {
   transform: scale(3);
 }
@@ -200,10 +311,10 @@ header button:hover {
   left: 4%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  background: url(/images/capoo_cry_weired2.jpg) no-repeat;
+  background: url(./images/capoo_cry_weired2.jpg) no-repeat;
   background-size: 100% 100%;
-  width: 150px;
-  height: 150px;
+  width: 15%;
+  height: 15%;
   border: none;
 }
 
@@ -211,22 +322,22 @@ header button:hover {
   flex-wrap: wrap;
   position: absolute;
   top: 88%;
-  left: 96%;
+  right: 4%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  background: url(/images/capoo_reject_weired.jpg) no-repeat;
+  background: url(./images/capoo_reject_weired.jpg) no-repeat;
   background-size: 100% 100%;
-  width: 150px;
-  height: 150px;
+  width: 15%;
+  height: 15%;
   border: none;
 }
 
 #body_botleft_btn:active {
-  background: url(/images/alvin.jpg) no-repeat;
+  background: url(./images/alvin.jpg) no-repeat;
   background-size: 100% 100%;
 }
 #body_botright_btn:active {
-  background: url(/images/johnson.jpeg) no-repeat;
+  background: url(./images/johnson.jpeg) no-repeat;
   background-size: 100% 100%;
 }
 button:focus {
@@ -234,10 +345,12 @@ button:focus {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
   font-family: Fantasy;
   font-size: 20px;
   width: 100%;
+  height: 10%;
   padding: 20px;
   display: inline-block;
   border: none;
@@ -245,6 +358,7 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="password"]:focus {
   background-color: #ddd;
   outline: none;
@@ -252,8 +366,7 @@ input[type="password"]:focus {
 
 hr {
   border: 2px solid #1e7562;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .cancelbtn,
@@ -273,7 +386,7 @@ hr {
   transition: all 0.3s ease 0s;
 }
 .cancelbtn:hover,
-.signupbtn:hover{
+.signupbtn:hover {
   background-color: #032d3d;
 }
 
@@ -288,7 +401,7 @@ hr {
   position: absolute;
   bottom: 3%;
   height: 10%;
-  width: 10%;
+  width: 8.42%;
 }
 
 .background_capoos img:nth-of-type(1) {
@@ -296,7 +409,7 @@ hr {
 }
 
 .background_capoos img:nth-of-type(2) {
-  left: 28%;
+  left: 30%;
 }
 
 .background_capoos img:nth-of-type(3) {
@@ -348,8 +461,8 @@ hr {
 }
 
 .game {
-  width: 900px;
-  height: 600px;
+  width: 800px;
+  height: 500px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -375,7 +488,7 @@ hr {
 
 .capoo {
   background: url("./images/capoo_looking_forward.jpg") bottom center no-repeat;
-  background-size: 80%;
+  background-size: 75%;
   position: absolute;
   top: 100%;
   width: 100%;
@@ -387,45 +500,292 @@ hr {
   top: 0;
 }
 
-
 .startgamebtn {
   color: rgb(83, 168, 140);
   margin-left: 15px;
   margin-right: 15px;
-  font-size: 40px;
+  font-size: 35px;
   padding: 5px 20px;
   background-color: #12536d;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
 }
-.startgamebtn:hover{
+.startgamebtn:hover {
   background-color: #0c394b;
 }
 
-@media (max-width: 1550px){
-  .body_title{
-    font-size: 55px;
+@media (max-width: 1600px) {
+  .navbar { 
+    height: 90px;
+  }
+  .title {
+    font-size: 40px;
+  }
+  .body_paragraph {
+    font-size: 35px;
+  }
+  .backGround {
+    height: 1333.3px;
+  }
+  .body_title {
+    font-size: 50px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 15px;
+    padding: 15px;
+  }
+  .score {
+    padding: 5px 110px;
+  }
+  header {
+    font-size: 1.6rem;
   }
   .game {
-    width: 750px;
-    height: 450px;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-  .startgamebtn {
-    font-size: 30px;
-  }
-  .score{
-    font-size: 30px;
-    padding: 10px 90px;
-  }
-  .body_paragraph
-  {
-    font-size: 40px;
+    width: 700px;
+    height: 400px;
   }
 }
 
+@media (max-width: 1200px) {
+  p,
+  li,
+  a {
+    font-size: 28px;
+  }
+  .cancelbtn,
+  .signupbtn {
+    float: left;
+    width: 200px;
+    height: 40px;
+    font-size: 15px;
+    padding: 2px 2px;
+  }
+  .body_paragraph {
+    font-size: 28px;
+  }
+  .backGround {
+    font-size: 30px;
+    height: 1150px;
+  }
+  .body_title {
+    font-size: 45px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 12px;
+    padding: 12px;
+  }
+  .score {
+    padding: 4px 100px;
+  }
+  header {
+    font-size: 1.4rem;
+  }
+  .game {
+    width: 570px;
+    height: 340px;
+  }
+  .nav_links li a {
+    font-size: 28px;
+  }
 
+  header button {
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 28px;
+    padding: 7px 18px;
+  }
+}
 
+@media (max-width: 1100px) {
+  .navbar { 
+    height: 85px;
+  }
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .backGround {
+    height: 1000px;
+  }
+  .body_paragraph {
+    font-size: 24px;
+  }
+  .score {
+    font-size: 28px;
+    padding: 3px 95px;
+  }
+
+  .startgamebtn {
+    font-size: 28px;
+    padding: 3px 16px;
+  }
+  .score {
+    font-size: 20px;
+    padding: 3px 60px;
+  }
+  .startgamebtn {
+    font-size: 20px;
+    padding: 3px 11px;
+  }
+  .body_title {
+    font-size: 30px;
+  }
+  .game {
+    width: 465px;
+    height: 340px;
+  }
+  label{
+    font-size: 18px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 12px;
+    padding: 12px;
+  }
+  p,
+  li,
+  a {
+    font-size: 18px;
+  }
+  .cancelbtn,
+  .signupbtn {
+    float: left;
+    width: 180px;
+    height: 38px;
+    font-size: 14px;
+    padding: 2px 2px;
+  }
+}
+@media (max-width: 850px) {
+  .navbar { 
+    height: 80px;
+  }
+  .cancelbtn,
+  .signupbtn {
+    float: left;
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+    padding: 1px 1px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 8px;
+    padding: 8px;
+  }
+  p,
+  li,
+  a {
+    font-size: 12px;
+  }
+  p,
+  li,
+  a {
+    font-size: 22px;
+  }
+  .body_title {
+    font-size: 25px;
+  }
+  .backGround {
+    height: 900px;
+  }
+  .body_paragraph {
+    font-size: 20.5px;
+  }
+
+  .score {
+    font-size: 18px;
+    padding: 3px 50px;
+  }
+  .startgamebtn {
+    font-size: 20px;
+    padding: 3px 11px;
+  }
+  .hole {
+    flex: 1 0 50%;
+  }
+  .game {
+    width: 300px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar { 
+    height: 75px;
+  }
+  label{
+    font-size: 12px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 8px;
+    padding: 8px;
+  }
+  p,
+  li,
+  a {
+    font-size: 12px;
+  }
+  .cancelbtn,
+  .signupbtn {
+    float: left;
+    width: 100px;
+    height: 25px;
+    font-size: 12px;
+    padding: 2px 2px;
+  }
+  .body_title {
+    font-size: 20px;
+  }
+  .backGround {
+    height: 720px;
+  }
+  .body_paragraph {
+    font-size: 20.5px;
+  }
+  .score {
+    font-size: 12px;
+    padding: 2px 30px;
+  }
+  .startgamebtn {
+    font-size: 12px;
+    padding: 2px 10px;
+  }
+  .hole {
+    flex: 1 0 50%;
+  }
+  .game {
+    width: 220px;
+    height: 275px;
+  }
+  .body_paragraph {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 20px;
+  }
+}
